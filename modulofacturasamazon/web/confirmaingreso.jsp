@@ -30,7 +30,7 @@
   <!-- Navbar -->
   <nav>
     <div class="nav-wrapper">
-      <a href="index.html" class="brand-logo"><img id="amazon_icon" src="/resources/amazon.png" alt="amazon_icon">amazon retail</a>
+      <a href="index.html" class="brand-logo"><img id="amazon_icon" src="resources/amazon.png" alt="amazon_icon">amazon retail</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="ingresafactura.html">Ingresar Facturas</a></li>
