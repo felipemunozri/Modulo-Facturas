@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--Import Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+    rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anular Factura</title>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-wrapper">
+      <a href="menu.html" class="brand-logo"><img id="amazon_icon" src="resources/amazon.png" alt="amazon_icon">amazon retail</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="ingresafactura.html">Ingresar Facturas</a></li>
+        <li><a href="cargafacturas.html">Cargar Facturas</a></li>
+        <li><a href="consultafacturas.html">Consultar Facturas</a></li>
+        <li><a href="anulafactura.html">Anular Factura</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Sidenav -->
+  <ul class="sidenav section" id="mobile-demo" style="background-color: #131921;">
+    <li><a href="ingresafactura.html">Ingresar Facturas</a></li>
+    <li><a href="cargafacturas.html">Cargar Facturas</a></li>
+    <li><a href="consultafacturas.html">Consultar Facturas</a></li>
+    <li><a href="anulafactura.html">Anular Factura</a></li>
+  </ul>
+
+  <!-- main -->
+  <div class="container section">
+    <div class="row">
+      <div class="col s12">
+        <div class="card center-align">
+          <div class="card-content">
+            <span class="card-title">Anular Factura</span>
+            <form action="confirmaanula.html" method="POST">
+              <div class="row valign-wrapper">
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">search</i>
+                  <input id="ruta_archivo" type="text">
+                  <label for="ruta_archivo">Buscar Factura por Número de Folio</label>
+                </div>
+                <div class="col s6">
+                  <a href="#" class="btn waves-effect waves-light left">Buscar Factura</a>
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col s12">
+                    <table id="tbl_facturas">
+                      <thead>
+                        <tr>
+                          <th>Folio Factura</th>
+                          <th>Rut Cliente</th>
+                          <th>Fecha Emisión</th>
+                          <th>Estado Factura</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>00000001</td>
+                          <td>12345678-9</td>
+                          <td>2020-08-11</td>
+                          <td>Activa</td>
+
+                        <!-- Se genera dinámicamente al ingresar productos-->
+  
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col s12">
+                    <button id="btn_anular" class="btn red lighten-2 waves-effect waves-light left" type="submit" style="margin-left: 1rem;">Anular Factura<i id="ico_send" class="material-icons right">send</i>
+                    </button>
+                  </div>
+                </div>
+            </form>
+          </div>     
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <!-- Inicialización Documento HTML -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {      
+
+      // Inicialización sidenav
+      var elems = document.querySelectorAll('.sidenav');
+      var instances = M.Sidenav.init(elems);
+
+      // Inicialización datepicker
+      var options_date = {
+        format: "yyyy-mm-dd"
+      }
+
+      var elems = document.querySelectorAll('.datepicker');
+      var instances = M.Datepicker.init(elems, options_date);
+
+    });
+  </script>
+
+</body>
+</html>

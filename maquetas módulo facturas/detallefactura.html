@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--Import Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+    rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle Factura</title>
+</head>
+<body>
+  
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-wrapper">
+      <a href="menu.html" class="brand-logo"><img id="amazon_icon" src="resources/amazon.png" alt="amazon_icon">amazon retail</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="ingresafactura.html">Ingresar Facturas</a></li>
+        <li><a href="cargafacturas.html">Cargar Facturas</a></li>
+        <li><a href="consultafacturas.html">Consultar Facturas</a></li>
+        <li><a href="anulafactura.html">Anular Factura</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Sidenav -->
+  <ul class="sidenav section" id="mobile-demo" style="background-color: #131921;">
+    <li><a href="ingresafactura.html">Ingresar Facturas</a></li>
+    <li><a href="cargafacturas.html">Cargar Facturas</a></li>
+    <li><a href="consultafacturas.html">Consultar Facturas</a></li>
+    <li><a href="anulafactura.html">Anular Factura</a></li>
+  </ul>
+
+  <!-- Main -->
+  <div class="container section" style="padding-left: 15px;padding-right: 15px;">
+    <div class="row">
+
+      <!-- Card Previzualizar e Ingresar Factura-->
+      <div class="col s12">
+        <div class="card lime lighten-5">
+          <div class="card-content">
+            <span class="card-title center-align">Detalle Factura</span>
+              <div class="row">
+                <div class="input-field col s6">
+                  Rut Cliente:
+                  <input class="teal-text text-lighten-2" name="rut_cliente" id="rut_cliente_detalle" type="text" >
+                </div>
+                <div class="input-field col s6">
+                  Razón Social:
+                  <input class="teal-text text-lighten-2" id="razon_social" type="text" >
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s6">
+                  Dirección:
+                  <input class="teal-text text-lighten-2" id="direccion" type="text" >
+                </div>
+                <div class="input-field col s6">
+                  Fecha:
+                  <input class="teal-text text-lighten-2" name="fecha" id="fecha_detalle" type="text" >
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12">
+                  <table id="tbl_productos" class="teal-text text-lighten-2">
+                    <thead>
+                      <tr>
+                        <th class="black-text">Cod. Producto</th>
+                        <th class="black-text">Descripción</th>
+                        <th class="black-text">Precio Uni.</th>
+                        <th class="black-text">Cantidad</th>
+                        <th class="black-text">Subtotal</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>00000001</td>
+                        <td>martillo</td>
+                        <td>5000</td>
+                        <td>2</td>
+                        <td>10000</td>
+                      </tr>
+                      <tr>
+                        <td>00000002</td>
+                        <td>mascarilla</td>
+                        <td>3000</td>
+                        <td>4</td>
+                        <td>12000</td>
+                      </tr>
+                      
+                      <!-- Se genera dinámicamente al ingresar productos-->
+
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <th class="black-text" scope="row" colspan="3" style="padding-right: 24px;">Total Neto</th>
+                        <td id="total_neto" colspan="3">22000</td>
+                      </tr>
+                      <tr>
+                        <th class="black-text" scope="row" colspan="3" style="padding-right: 24px;">IVA</th>
+                        <td id="iva" colspan="3">4180</td>
+                      </tr>
+                      <tr>
+                        <th class="black-text" scope="row" colspan="3" style="padding-right: 24px;">Total</th>
+                        <td id="total" colspan="3">26180</td>
+                      </tr>
+                    </tfoot>
+                  </table>
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col s6">
+                  <a id="btn_volver" class="btn waves-effect waves-light left" type="btn">Volver</a>
+                  </button>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <!-- Inicialización Documento HTML -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {      
+
+      // Inicialización sidenav
+      var elems = document.querySelectorAll('.sidenav');
+      var instances = M.Sidenav.init(elems);
+
+      // Inicialización datepicker
+      var options_date = {
+        format: "yyyy-mm-dd"
+      }
+
+      var elems = document.querySelectorAll('.datepicker');
+      var instances = M.Datepicker.init(elems, options_date);
+
+    });
+  </script>
+
+</body>
+</html>

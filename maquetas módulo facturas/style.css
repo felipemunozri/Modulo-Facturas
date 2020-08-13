@@ -1,0 +1,36 @@
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.brand-logo {
+  margin-left: 1rem;
+}
+
+#amazon_icon {
+  position: relative;
+  top: 8px;
+  margin-right: 9px;
+}
+
+.nav-wrapper a:hover {
+  border: 1px solid white;
+  border-radius: 5%;
+}
+
+.sidenav {
+  background-color: #131921;
+}
+
+.sidenav li a {
+  color: white;
+}
+
+.sidenav a:hover {
+  border: 1px solid white;
+  border-radius: 5%;
+}
+
+nav {
+  background-color: #131921;
+}
+
